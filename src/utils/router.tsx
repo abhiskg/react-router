@@ -3,7 +3,8 @@ import Root from "../screens/Root";
 import Error from "../screens/Error";
 import Home from "../screens/Home";
 import About from "../screens/About";
-import Work from "../screens/Work";
+import Users from "../screens/Users";
+import UserDetails from "../screens/UserDetails";
 
 const router = createBrowserRouter([
   {
@@ -20,9 +21,15 @@ const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "work",
-        element: <Work />,
+        path: "users",
+        element: <Users />,
         loader: async () => fetch("https://jsonplaceholder.typicode.com/users"),
+      },
+      {
+        path: "user/:id",
+        element: <UserDetails />,
+        loader: async ({ params }) =>
+          fetch(`https://jsonplaceholder.typicode.com/users/${params.id}`),
       },
     ],
   },

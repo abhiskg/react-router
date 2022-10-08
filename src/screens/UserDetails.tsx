@@ -1,8 +1,8 @@
 import { useLoaderData } from "react-router-dom";
-const Work = () => {
+const UserDetails = () => {
   const data = useLoaderData();
   console.log(data);
-  return <div>Work</div>;
+  return <div>User Details</div>;
 };
 
-export default Work;
+export default UserDetails;

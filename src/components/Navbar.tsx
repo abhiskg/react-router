@@ -1,18 +1,39 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 export const Navbar = () => {
   return (
     <header className="flex justify-between">
-      <div>React Router</div>
+      <Link to={"/"}>React Router</Link>
       <nav>
         <ul className="flex gap-5">
           <li>
-            <Link to="/home">Home</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "text-blue-500" : "text-black"
+              }
+              to="/home"
+            >
+              Home
+            </NavLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "text-blue-500" : "text-black"
+              }
+              to="/about"
+            >
+              About
+            </NavLink>
           </li>
           <li>
-            <Link to="/work">Work</Link>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "text-blue-500" : "text-black"
+              }
+              to="/users"
+            >
+              Users
+            </NavLink>
           </li>
         </ul>
       </nav>
